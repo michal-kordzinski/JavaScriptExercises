@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>t2cw6a.html</title>
+</head>
+<body>
+    <script>
+        liczba = prompt('Podaj liczbę, aby sprawdzić jej podzielność przez 6:');
+        liczba = parseInt(liczba);
+        wynik = (isNaN(liczba)) ? document.write('Podałeś tekst, wprowadź liczbę') : 
+        (liczba%6==0) ? document.write('Liczba podzielna przez 6') : 
+        document.write('Liczba niepodzielna przez 6');
+        
+        /*
+        if(wynik==false){
+            wynik = (liczba%6==0) ? 'podzielna' : 'niepodzielna';
+                if (wynik=='podzielna') {
+                    
+                }
+        } else {
+            document.write('Podałeś tekst, wprowadź liczbę');
+            document.close();
+        }
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>t2cw5b.html</title>
+</head>
+<body>
+        <script>
+                var wybrana_figura = prompt('Wybierz jedną z danych figur: \n prostokąt, \n kwadrat, \n koło, \n trapez');
+                switch (wybrana_figura) {
+                    case 'prostokąt':
+                        var a = prompt('Podaj podstawę a');
+                        var b = prompt('Podaj podstawę b');
+                        a = parseInt(a);
+                        b = parseInt(b);
+                        document.open();
+                        document.write('a = ' + a + '<br>b = ' + b + '<br>P_p = ' + a*b);
+                        document.close();
+                        break;
+                    
+                    case 'kwadrat':
+                        var a = prompt('Podaj podstawę a');
+                        a = parseInt(a);
+                        document.open();
+                        document.write('a = ' + a + '<br>P_k = ' + a*a);
+                        document.close();
+                        break;
+
+                        case 'koło':
+                        var r = prompt('Podaj promień koła');
+                        var odp = prompt('Czy chcesz pole koła obliczyć z dokładną wykładnią liczby pi? ("tak" || "nie":');
+                        r = parseInt(r);
+                        switch (odp) {
+                            case 'tak':
+                                var pi = Math.PI;
+                                document.open();
+                                document.write('r = ' + r + '<br>P_k = ' + (2 * pi * r));
+                                document.close();
+                                break;
+
+                            case 'nie':
+                                document.open();
+                                document.write('r = ' + r + '<br>P_k = ' + (2 * r) + '&pi;');
+                                document.close();
+                                break;
+
+                            default:
+                                document.open();
+                                document.write('Podaj odpowiedź "tak" lub "nie".');
+                                document.close();
+                        }
+                        break;
+
+                    case('trapez'):
+                        var a = prompt('Podaj podstawę a');
+                        var b = prompt('Podaj podstawę b');
+                        var h = prompt('Podaj podstawę h');
+                        a = parseInt(a);
+                        b = parseInt(b);
+                        h = parseInt(h);
+                        document.open();
+                        document.write('a = ' + a + '<br>b = ' + b + '<br>h = ' + h + '<br>P_t = ' + (((a+b)*h)/2));
+                        document.close();
+                        break;
+                    default:
+                        document.open();
+                        document.write('Podałeś niewłaściwą figurę');
+                        document.close();
+                }
+            </script>
+</body>
+</html>

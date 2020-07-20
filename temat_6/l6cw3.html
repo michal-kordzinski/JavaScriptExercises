@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>l6cw3.html</title>
+</head>
+<body>
+    <script>
+        function Osoba(imie, nazwisko, dzien, miesiac, rok, wzrost, kolor_oczu, ulica, nr_domu, nr_mieszkania,
+        kod_pocztowy, miejscowosc){ 
+            this.imie = imie;
+            this.nazwisko = nazwisko;
+            this.data_urodzenia = {
+                dzien: dzien,
+                miesiac: miesiac,
+                rok: rok
+            }
+            this.wzrost = wzrost;
+            this.kolor_oczu = kolor_oczu;
+            this.adres_zamieszkania = {
+                ulica: ulica,
+                nr_domu: nr_domu,
+                nr_mieszkania: nr_mieszkania,
+                kod_pocztowy: kod_pocztowy,
+                miejscowosc: miejscowosc
+            };
+        }
+        const michal = new Osoba('michal', 'nazwisko', 1, 2, 2000, 180, 'niebieski', 'Taczaka', 30, 20, 
+        '60-030', 'Poznan');
+        console.log(michal);
+        const para = document.createElement('p');
+        document.body.appendChild(para);
+        for (const key in michal){
+            if (typeof(michal[key])==="object"){
+                for (const key2 in michal[key]) para.insertAdjacentHTML('beforeend', 
+                `${key2}: ${michal[key][key2]}<br>`);
+            }    
+             else para.insertAdjacentHTML('beforeend', `${key}: ${michal[key]}<br>`);
+            
+        }
+
+    </script>
+</body>
+</html>

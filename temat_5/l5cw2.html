@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const tablica = ['BMW', 'Toyota', 'Opel', 'Skoda'];
+        const p = document.createElement('p');
+        p.setAttribute('id', 'paragraf');
+        document.body.appendChild(p);
+        tablica.reverse();
+        const BMW = tablica[tablica.indexOf('BMW')];
+        const Toyota = tablica[tablica.indexOf('Toyota')];
+        const Opel = tablica[tablica.indexOf('Opel')];
+        const Skoda = tablica[tablica.indexOf('Skoda')];
+        const zdanie = `Lubię samochody marki ${Toyota} i ${Opel}, ale nie lubię ${BMW} i ${Skoda}.`;
+        const textNode = document.createTextNode(zdanie);
+        document.querySelector('#paragraf').appendChild(textNode);
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>t2cw3b.html</title>
+	</head>
+	<body>
+		<h1>Pole trapezu</h1>
+		<p>
+			Podstawa a=<b id='a'></b><br>
+			Podstawa b=<b id='b'></b><br>
+			Wysokość h=<b id='h'></b><br>
+			Pole = <b id='p'></b>
+			<div id='brak'></div>
+		</p>
+		<script>
+			var a = prompt('Podaj długośc pierwszej podstawy trapezu:');
+			var b = prompt('Podaj długośc drugiej podstawy trapezu:');
+			var h = prompt('Podaj długośc wysokości trapezu:');
+			
+			if (a==='' || b==='' || h===''){
+				document.getElementById('brak').innerHTML = 'Jedna z wartości jest równa 0';
+			}
+			else {
+				a = parseInt(a);
+				b = parseInt(b);
+				h = parseInt(h);
+				var pole = (((a+b)*h)/2);
+				console.log(a + ', ' + b + ', ' + h);
+				console.log(typeof(a), typeof(b), typeof(h));
+				console.log((a+b)*h);
+				console.log(pole);
+				document.getElementById('a').innerHTML = a;
+				document.getElementById('b').innerHTML = b;
+				document.getElementById('h').innerHTML = h;
+				document.getElementById('p').innerHTML = pole + '^2';
+			}
+			</script>
+	</body>
+</html>

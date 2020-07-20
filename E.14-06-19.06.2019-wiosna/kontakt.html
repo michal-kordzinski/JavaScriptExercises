@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="styl.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>Pogotownie Komputerowe</title>
+</head>
+<body>
+<div class="container">
+    <!-- baner -->
+    <div class="row baner">
+        <div class="col" id="col_baner"><img src="baner1.png" alt="baner"></div>
+    </div>
+    <!-- menu -->
+    <div class="row justify-content-center menu">
+        <div class="col-3"><a href="index.html">O nas</a></div>
+        <div class="col-3"><a href="kontakt.html">Kontakt</a></div>
+    </div>
+    <!-- blok główny -->
+    <div class="row row-col-3 blok_glowny">
+        <!-- Kim jesteśmy -->
+        <div class="col">
+            <h2>Kim jesteśmy</h2>
+            <p>Jesteśmy firmą z wieloletnim doświadczeniem w zakresie IT.</p>
+        </div>
+        <!--Formularz kontaktowy -->
+        <div class="col" id="formularz_kontaktowy">
+            <h3>Formularz kontaktowy</h3>
+            <form action="">
+            <table>
+                <tr>
+                    <td>Imię</td>
+                    <td><input type="text" name="imie" id="imie" required></td>
+                </tr>
+                <tr>
+                    <td>Nazwisko</td>
+                    <td><input type="text" name="nazwisko" id="nazwisko" required></td>
+                </tr>
+                <tr>
+                    <td>E-mail</td>
+                    <td><input type="email" name="email" id="email" required></td>
+                </tr>
+                <tr>
+                    <td>Usługa</td>
+                    <td><select name="usluga" id="usluga" required>
+                        <option value="" disabled selected>--Wybierz--</option>
+                        <option value="naprawa komputera">naprawa komputera</option>
+                        <option value="odzyskiwanie danych">odzyskiwanie danych</option>
+                        <option value="problemy z oprogramowaniem">problemy z oprogramowaniem</option>
+                        <option value="konfiguracja sieci LAN">konfiguracja sieci LAN</option>
+                        <option value="inne">inne</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="checkbox" name="kopia_wiadomosci" id="kopia_wiadomosci" checked>Wyślij kopię wiadomości</td>
+                </tr>
+                <tr>
+                    <td><input type="reset" value="Resetuj" id="reset"></td>
+                    <td><input type="submit" value="Prześlij" id="submit"></td>
+                </tr>
+            </table>
+            </form>
+        </div>
+        <!-- Co nas cechuje -->
+        <div class="col">
+            <h2>Co nas cechuje?</h2>
+            <p>Doświadczenie, niezawodność, konkurencyjne ceny.</p>
+        </div>
+    </div>
+    <!-- stopka -->
+    <div class="row">
+        <div class="col stopka"><p>Autor strony:<b>Michał Kordziński</b></p></div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('submit', () => {
+        const imie = document.querySelector('#imie').value;
+        const nazwisko = document.querySelector('#nazwisko').value;
+        const email = document.querySelector('#email').value;
+        const usluga = document.querySelector('#usluga').selectedOptions[0].value;
+        email.toLowerCase();
+        document.querySelector('#formularz_kontaktowy').insertAdjacentHTML('beforeend', `
+        ${imie} ${nazwisko}<br>
+        ${email}<br>
+        Usługa: ${usluga}`);
+        event.preventDefault();
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

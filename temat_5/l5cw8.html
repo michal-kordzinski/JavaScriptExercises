@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>l5cw8.html</title>
+</head>
+<body>
+    <script>
+    const tab = [
+        ['michal', 'kowalski', 20, '01.01.2000', '4e'], 
+        ['marek', 'nowak', 20, '01.01.2000', '4e'], 
+        ['arek', 'pszczola', 20, '01.01.2000', '4e']
+    ];
+
+    const table = document.createElement('table');
+    table.setAttribute('id', 'table');
+    document.body.appendChild(table);
+    const table_id = document.querySelector('#table');
+    const row1 = table.insertRow(0);
+    const row2 = table.insertRow(1);
+    const row3 = table.insertRow(1);
+    const cell1 = row1.insertCell(0);
+    const cell2 = row2.insertCell(0);
+    const cell3 = row3.insertCell(0);
+    const rows_in_table = [cell1,cell2,cell3];
+    let pomocnicza = 0;
+    tab.forEach(element => {
+        element.forEach(element2 => {
+            rows_in_table[pomocnicza].insertAdjacentHTML('beforeend', `<td>${element2} </td>`)
+        });
+        pomocnicza += 1;
+    });
+    </script>
+</body>
+</html>

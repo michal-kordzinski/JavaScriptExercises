@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>t3cw5.html</title>
+</head>
+<body>
+     <form action="" method="" id="calculator">
+          <br><br>
+          <label for="area_1">Wprowadź pierwsza liczbę</label>
+          <input type="text" name="area_1" id="area_1"><br><br>
+          <label for="area_2">Wprowadź drugą liczbę</label>
+          <input type="text" name="area_2" id="area_2"><br><br>
+          <!-- <button type="button" id="addition" name="operations" value="+">+</button>
+          <button type="button" id="subtraction" name="operations" value="-">-</button><br><br>
+          <button type="button" id="multiplication" name="operations" value="*">*</button>
+          <button type="button" id="division" name="operations" value="/">/</button><br><br> -->
+          <select name="operations" id="list">
+               <option value="+">+</option>
+               <option value="-">-</option>
+               <option value="*">*</option>
+               <option value="/">/</option>
+          </select>
+          <button type="button" id="sum">Oblicz</button><br><br>
+          <label for="result">Wynik: </label>
+          <textarea name="result" id="result" cols="" rows="1"></textarea>
+     </form>
+     <script>
+          listener = document.querySelectorAll('#list');
+          document.querySelector('#sum').addEventListener('click', function calculate() {
+               area_1 = document.querySelector('#area_1').value;
+               area_1 = parseInt(area_1);
+               area_2 = document.querySelector('#area_2').value;
+               area_2 = parseInt(area_2);
+               switch (listener[0].value) {
+                    case '+':
+                         result = area_1 + area_2;
+                         console.log('dziala +');
+                         break;
+
+                    case '-':
+                         result = area_1 - area_2;
+                         console.log('dziala -');
+                         break;
+
+                    case '*':
+                         result = area_1 * area_2;
+                         console.log('dziala *');
+                         break;
+
+                    default:
+                         result = area_1 / area_2;
+                         console.log('dziala /');
+                         break;
+                    }; 
+          });
+                    
+          document.querySelector('#sum').addEventListener('click', function displayResult() {
+               if (isNaN(result)) {
+                    window.confirm('Wpisz liczby');
+               } else {
+                    document.querySelector('#result').innerHTML = result;
+               }
+          })
+     </script>
+</body>
+</html>

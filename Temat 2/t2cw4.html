@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id='pole'></p>
+    <script>
+        var wydatki = prompt('Ile chcesz wydać w czasie dzisiejszego wieczoru?');
+        wydatki = parseInt(wydatki);
+        if (wydatki >= 100) {
+            document.getElementById('pole').innerHTML = 'Możesz iść na kolację i do kina.';
+        }
+        else if (wydatki >= 50) {
+            document.getElementById('pole').innerHTML = 'Możesz iść na dobrą kolację.';
+        } 
+        else if (wydatki >= 25) {
+            document.getElementById('pole').innerHTML = 'Możesz iść do kina.';
+        }
+        else {
+            document.getElementById('pole').innerHTML = 'Spędzisz wieczór przed telewizorem.';
+        }
+        
+    </script>
+</body>
+</html>

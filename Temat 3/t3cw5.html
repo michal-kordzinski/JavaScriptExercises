@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>t3cw5.html</title>
+</head>
+<body>
+     <form action="" method="" id="calculator">
+          <br><br>
+          <label for="area_1">Wprowadź pierwsza liczbę</label>
+          <input type="text" name="area_1" id="area_1"><br><br>
+          <label for="area_2">Wprowadź drugą liczbę</label>
+          <input type="text" name="area_2" id="area_2"><br><br>
+          <button type="button" id="addition" name="operations" value="+">+</button>
+          <button type="button" id="subtraction" name="operations" value="-">-</button><br><br>
+          <button type="button" id="multiplication" name="operations" value="*">*</button>
+          <button type="button" id="division" name="operations" value="/">/</button><br><br>
+          <button type="button" id="sum">Oblicz</button><br><br>
+          <label for="result">Wynik: </label>
+          <textarea name="result" id="result" cols="" rows="1"></textarea>
+     </form>
+     <script>
+          listener = document.querySelectorAll('#calculator button[name="operations"]');
+          Array.from(listener).forEach(element => {
+               element.addEventListener('click', function calculate() {
+                    console.log(element.value);
+                    area_1 = document.querySelector('#area_1').value;
+                    area_1 = parseInt(area_1);
+                    area_2 = document.querySelector('#area_2').value;
+                    area_2 = parseInt(area_2);
+                    switch (element.value) {
+                         case '+':
+                              result = area_1 + area_2;
+                              break;
+                         case '-':
+                              result = area_1 - area_2;
+                              break;
+                         case '*':
+                              result = area_1 * area_2;
+                              break;
+                         default:
+                              result = area_1 / area_2;
+                              break;
+                    }
+               })
+          });
+          //forem nie dziala, ani wersja in ani ani of
+          // for (input of listener){
+          //      console.log(input);
+          //      area_1 = document.querySelector('#area_1').value;
+          //      area_1 = parseInt(area_1);
+          //      area_2 = document.querySelector('#area_2').value;
+          //      area_2 = parseInt(area_2);
+          //      input.addEventListener('click', function calculate(){
+          //           console.log(input);
+               //      if (input.value = '+'){
+                         
+               //           console.log('+');
+               //           console.log(input.value);
+               //      } else if(input.value = '-'){
+               //           area_1 = document.querySelector('#area_1').value;
+               //           area_1 = parseInt(area_1);
+               //           area_2 = document.querySelector('#area_2').value;
+               //           area_2 = parseInt(area_2);
+               //           result = area_1 - area_2;
+               //           console.log('-');
+               //           console.log(input.value);
+               //      } else if(input.value = '*'){
+               //           area_1 = document.querySelector('#area_1').value;
+               //           area_1 = parseInt(area_1);
+               //           area_2 = document.querySelector('#area_2').value;
+               //           area_2 = parseInt(area_2);
+               //           result = area_1 * area_2;
+               //           console.log('*');
+               //           console.log(input.value);
+               //      } else if(input.value = '/'){
+               //           area_1 = document.querySelector('#area_1').value;
+               //           area_1 = parseInt(area_1);
+               //           area_2 = document.querySelector('#area_2').value;
+               //           area_2 = parseInt(area_2);
+               //           result = area_1 / area_2;
+               //           console.log('/');
+               //           console.log(input.value);
+               //      }
+               //});    
+          //}
+          document.querySelector('#sum').addEventListener('click', function displayResult() {
+               if (isNaN(result)) {
+                    window.confirm('Wpisz liczby');
+               } else {
+                    document.querySelector('#result').innerHTML = result;
+               }
+               
+          })
+     </script>
+</body>
+</html>

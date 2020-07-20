@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>T7cw2aA.html</title>
+    <style>
+        .parzyste {
+            text-align: center;
+            background-color: red;
+            color: yellow;
+            font-family: cursive;
+        }
+        .parzyste2 {
+            text-align: right;
+            background-color: green;
+            color: blue;
+            font-family: sans-serif;
+        }
+        .nieparzyste {
+            text-align: center;
+            background-color: yellow;
+            color: red;
+            font-family: cursive;
+        }
+        .nieparzyste2 {
+            text-align: right;
+            background-color: blue;
+            color: white;
+            font-family: sans-serif;
+        }
+        .trzy_pierwsze {
+            text-align: center;
+            background-color: black;
+            color: white;
+            font-family: cursive;   
+        }
+        .trzy_pierwsze2 {
+            text-align: right;
+            background-color: grey;
+            color: black;
+            font-family: sans-serif;   
+        }
+        .normalne_litery {
+            text-transform: none;
+        }
+        .drukowane_litery {
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <p class="parzyste">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus soluta, cupiditate atque ullam error, eos laborum doloremque quo fugit similique, officiis quasi itaque laboriosam consectetur vel et sunt necessitatibus. Tempora.</p>
+    <p class="nieparzyste">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam nobis porro libero non alias rem, ab repellat, harum distinctio maxime nisi earum itaque quas neque est ducimus tempora corrupti vero?</p>
+    <p class="parzyste">Recusandae adipisci nobis, veniam sit modi eius amet obcaecati accusamus repellendus molestiae quam commodi, tempora minus inventore nemo vel sapiente debitis accusantium ad eaque, architecto ab ipsum blanditiis dolore! Quaerat.</p>
+    <p class="nieparzyste">Exercitationem rem debitis quidem quasi ea sapiente dignissimos! Sequi, velit neque provident reiciendis amet accusamus error, sunt nulla dicta atque possimus? Porro aspernatur vitae odit voluptate sapiente. Tempora, cupiditate nobis!</p>
+    <p class="parzyste">Enim commodi, officia tempore eligendi, perspiciatis voluptas nihil repudiandae possimus doloremque deleniti et magni quasi. Consequuntur minima praesentium, ea maxime quidem facilis odit tenetur molestias dicta magnam! Magnam, aliquam nihil.</p>
+    <p class="nieparzyste" value='sprawdzenie'>Dolorum, quod eius neque reprehenderit animi repudiandae placeat nulla obcaecati quidem quam repellendus. Est saepe autem corrupti quisquam eos? Maiores dignissimos tenetur amet nobis officiis, corrupti perferendis dolores molestiae deserunt!</p>
+    <button type="button" id="zmien_parzyste">Zmień parzyste</button>
+    <button type="button" id="zmien_nieparzyste">Zmień nieparzyste</button>
+    <button type="button" id="zmien_trzy_pierwsze">Zmień trzy pierwsze</button>
+    <script>
+        const parzyste = document.querySelectorAll('.parzyste');
+        const nieparzyste = document.querySelectorAll('.nieparzyste');
+        const trzy_pierwsze = document.querySelectorAll('p:nth-child(-n+3)');
+        const ostatni_akapit = document.querySelector('p:last-of-type');
+        ostatni_akapit.style.letterSpacing = '0px';
+        document.querySelector('#zmien_parzyste').addEventListener('click', () => {
+            let topVal = parseInt(ostatni_akapit.style.letterSpacing);
+            ostatni_akapit.style.letterSpacing = (topVal + 6) + "px";
+
+            if(ostatni_akapit.classList.contains('drukowane_litery')){
+                ostatni_akapit.classList.remove('drukowane_litery');
+                ostatni_akapit.classList.add('normalne_litery');
+            } else ostatni_akapit.classList.add('drukowane_litery');
+
+            for(let i=0; i < parzyste.length;i++){
+                parzyste[i].classList.toggle('parzyste');
+                parzyste[i].classList.toggle('parzyste2');
+            }
+        });
+        document.querySelector('#zmien_nieparzyste').addEventListener('click', () => {
+            let topVal = parseInt(ostatni_akapit.style.letterSpacing);
+            ostatni_akapit.style.letterSpacing = (topVal + 6) + "px";
+
+            if(ostatni_akapit.classList.contains('drukowane_litery')){
+                ostatni_akapit.classList.remove('drukowane_litery');
+                ostatni_akapit.classList.add('normalne_litery');
+            } else ostatni_akapit.classList.add('drukowane_litery');
+
+            for(let i=0; i < nieparzyste.length;i++){
+                nieparzyste[i].classList.toggle('nieparzyste');
+                nieparzyste[i].classList.toggle('nieparzyste2');
+            }
+        });
+        document.querySelector('#zmien_trzy_pierwsze').addEventListener('click', () => {
+            let topVal = parseInt(ostatni_akapit.style.letterSpacing);
+            ostatni_akapit.style.letterSpacing = (topVal + 6) + "px";
+            
+            if(ostatni_akapit.classList.contains('drukowane_litery')){
+                ostatni_akapit.classList.remove('drukowane_litery');
+                ostatni_akapit.classList.add('normalne_litery');
+            } else ostatni_akapit.classList.add('drukowane_litery');
+
+            for(let i=0; i < trzy_pierwsze.length;i++){
+                trzy_pierwsze[i].classList.toggle('trzy_pierwsze');
+                trzy_pierwsze[i].classList.toggle('trzy_pierwsze2');
+            }
+        });
+    </script>
+</body>
+</html>

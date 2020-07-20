@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>t8cw3.html</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-between;
+            background-color: darkgrey;
+        }
+        body > img {
+            width: 40%;
+            height: 40%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Stwórz stronę internetową zawierającą nagłówek z tekstem "Ciemno ", przycisk „Włącz
+światło” i obrazek ciemnej żarówki. Ustaw odpowiednio elementy i style tak, aby obraz znajdował się
+na środku okna przeglądarki a nagłówek i przycisk w lewym górnym rogu strony. Ustaw ciemnoszary
+kolor tła strony.
+Przygotuj skrypt uruchamiany przyciskiem tak aby, po jego kliknięciu:
+ zmieniał się nagłówek na "Stała się jasność,
+ nastąpiła zmiana napisu na przycisku na „Wyłącz światło”,
+ nastąpiła zmian obrazka na zapaloną/jasną żarówkę,
+ zmieniło się tło strony na białe/jasne
+Po ponownym kliknięciu na przycisk wszystkie ustawienia powinny wrócić do wyjściowych. Przycisk
+powinien pozwalać na wielokrotne wykonanie działań. -->
+    <div>
+        <h1>Ciemno</h1>
+        <button type="button">Włącz światło</button>
+    </div>
+    <img src="zarowki/ciemno.png" alt="zgaszona żarówka">
+    <div></div>
+    <script>
+        document.body.children[0].lastElementChild.addEventListener('click', () => {
+            if (document.body.children[0].firstElementChild.textContent == 'Ciemno') {
+                document.body.children[0].firstElementChild.textContent = 'Jasno';
+                document.body.children[0].lastElementChild.textContent = 'Wyłącz światło';
+                document.body.children[1].src = 'zarowki/jasno.png';
+                document.body.style.backgroundColor = 'lightgray';
+            } else {
+                document.body.children[0].firstElementChild.textContent = 'Ciemno';
+                document.body.children[0].lastElementChild.textContent = 'Włącz światło';
+                document.body.children[1].src = 'zarowki/ciemno.png';
+                document.body.style.backgroundColor = 'darkgray';
+            }
+        });
+    </script>
+</body>
+</html>

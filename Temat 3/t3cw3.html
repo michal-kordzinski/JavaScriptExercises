@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>t3cw3.html</title>
+</head>
+<body>
+     <form action="" method="" id="check_sex">
+     <fieldset>
+          <legend>Płeć</legend>
+          <label for="female">Kobieta</label>
+          <input type="radio" name="plec" id="female" value="female">
+          <label for="male">Mężczyzna</label>
+          <input type="radio" name="plec" id="male" value="male">
+          <button type="button" id="check">Sprawdź</button>
+          <textarea name="area" id="area" cols="" rows="1"></textarea>
+     </fieldset>
+     </form>
+     <script>
+          document.querySelector('#check').addEventListener('click', function checkSex() {
+               sex = document.querySelectorAll('#check_sex input[name="plec"]');
+               if (sex[0].checked) {
+                    document.querySelector('#area').innerHTML = 'Kobieta';
+               } else {
+                    document.querySelector('#area').innerHTML = 'Mężczyzna';
+               }
+          })
+     </script>
+</body>
+</html>

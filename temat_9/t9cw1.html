@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>t9cw1.html</title>
+    <style>
+        img{
+            width: 30%;
+            height: 30%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Przygotuj stronę html. Umieść w niej div oraz przycisk uruchamiający funkcję
+wstawiającą dynamicznie do przygotowanego diva: tekst nagłówkowy „Polecane strony”, dwa linki
+do wybranych stron oraz obrazek. -->
+    <div></div>
+    <button type="button">Kliknij mnie!</button>
+    <script>
+        document.body.children[1].addEventListener('click',  () => {
+            switch (document.body.children[0].children.length) {
+                case 0:
+                document.body.children[0].insertAdjacentHTML('beforeend', 
+                    '<h1>Polecane strony</h1>' + 
+                    '<a href="facebook.pl">facebook.pl</a><br>' + 
+                    '<a href="twitter.com">twitter.com</a><br>' + 
+                    '<img src="ciemno.png" alt="zarowka">');
+                    break;
+                case 6:
+                document.body.children[0].innerHTML = '';
+                    break;
+            }
+            
+        });
+    </script>
+</body>
+</html>

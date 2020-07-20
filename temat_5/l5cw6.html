@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>l5cw6.html</title>
+</head>
+<body>
+    <script>
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        function pobieranieDanych() {
+            let tab = [];
+            const ilosc = parseInt(prompt('Ile liczb produktów chcesz kupić? '));
+            if (ilosc <= 0){
+                return 0;
+            } else{
+                for (let index = 1; index <= ilosc; index++) tab.push(capitalizeFirstLetter(prompt(`Podaj ${index} produkt: `)));
+            }
+            return tab;
+        }
+        const dane = pobieranieDanych();
+        if (dane == 0) {
+            document.write('Podaj dodatnią liczbe produktów');
+        } else {
+            dane.sort();
+            const lista = document.createElement('ol');
+            lista.setAttribute('id', 'lista');
+            document.body.appendChild(lista);
+            dane.forEach(element => {
+                document.querySelector('#lista').insertAdjacentHTML('beforeend', `<li>${element}</li>`); 
+            });
+
+            if (dane.includes('Chleb')) document.querySelector('#lista').insertAdjacentHTML('beforeend', `OK, zapisałeś chleb`);
+            else document.querySelector('#lista').insertAdjacentHTML('beforeend', `Zapomniałeś o chlebie`);
+        }
+        
+
+    </script>
+</body>
+</html>

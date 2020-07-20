@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>l5cw5.html</title>
+</head>
+<body>
+    <script>
+        function pobieranieDanych() {
+            let tab = [];
+            tab.push(parseInt(prompt('Podaj pierwsza liczbe: ')));
+            tab.push(parseInt(prompt('Podaj druga liczbe')));
+            tab.push(parseInt(prompt('Podaj trzecia liczbe')));
+            tab.push(parseInt(prompt('Podaj czwarta liczbe')));
+            tab.push(parseInt(prompt('Podaj piata liczbe')));
+            return tab;
+        }
+        const dane = pobieranieDanych();
+        const sum = dane.reduce(function(pierwszy, drugi){
+            return pierwszy + drugi;
+        })
+        document.write(sum);
+    </script>
+</body>
+</html>

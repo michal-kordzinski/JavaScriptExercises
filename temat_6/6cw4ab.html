@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>6cw4a.html</title>
+</head>
+<body>
+    <script>
+        function Osoba(imie, nazwisko, wzrost, waga) {
+            this.imie = imie;
+            this.nazwisko = nazwisko;
+            this.wzrost = wzrost;
+            this.waga = waga;
+            this.powitanie = function powitanie() {
+                const para = document.createElement('p');
+                const text = document.createTextNode(`Witaj ${this.imie} ${this.nazwisko}`);
+                para.appendChild(text);
+                document.body.appendChild(para);
+            }
+            this.informacje = function informacje() {
+                const para = document.createElement('p');
+                document.body.appendChild(para);
+                para.innerHTML = `
+                    Imię i nazwisko: ${this.imie} ${this.nazwisko}<br>
+                    Wzrost: ${this.wzrost}<br>
+                    Waga: ${this.waga}<br>
+                `;
+            }
+        }
+        const imie = prompt('Podaj imie');
+        const nazwisko = prompt('Podaj nazwisko');
+        const wzrost = prompt('Podaj wzrost');
+        const waga = prompt('Podaj wage');
+        const osoba = new Osoba(imie, nazwisko, wzrost, waga);
+        osoba.powitanie();
+        osoba.informacje();
+    </script>
+</body>
+</html>

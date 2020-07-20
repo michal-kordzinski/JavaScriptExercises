@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>T9cw2.html</title>
+    <style>
+        .div1{
+            background-color: lightgray;
+            min-height: 100px;
+            display: flex;
+        }
+        .div2{
+            height: 200px;
+            width: 200px;
+            background-color: lightskyblue;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pudełka niespodzianek</h1>
+    <div class="div1"></div><br><hr>
+    <button type="button">Przycisk nr 1</button><br><br><hr>
+    <button type="button">Przycisk nr 2</button><br><br>
+    <textarea name="akapit" id="akapit" cols="30" rows="10" required></textarea><br><br><hr>
+    <button type="button">Przycisk nr 3</button>
+    <script>
+        document.body.children[4].addEventListener('click', () => {
+            const div = document.createElement('div');
+            document.body.children[1].appendChild(div);
+            document.body.children[1].lastChild.classList.add('div2');
+        });
+        document.body.children[8].addEventListener('click', () => {
+            if(!document.body.children[1].lastChild.hasChildNodes() && document.body.children[11].value != ''){ 
+                const akapit = document.querySelector('#akapit').value;
+                const p = document.createElement('p');
+                const text_node = document.createTextNode(akapit);
+                p.appendChild(text_node);
+                document.body.children[1].lastChild.appendChild(p);
+            } else document.body.children[1].lastChild.hasChildNodes() ? alert('Tekst został wpisany w kwadrat') : alert('Wpisz tekst w miejscu do tego wyznaczonym');
+        });
+        document.body.children[15].addEventListener('click', () => {
+            document.body.children[1].firstChild.remove();
+            
+        });
+    </script>
+</body>
+</html>

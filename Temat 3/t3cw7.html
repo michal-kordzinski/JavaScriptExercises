@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>t3cw7.html</title>
+</head>
+<body>
+     <form action="" method="" id="form">
+          <label for="name">Imie</label>
+          <input type="text" name="name" id="name"><br><br>
+
+          <label for="surname">Nazwisko</label>
+          <input type="text" name="surname" id="surname"><br><br>
+
+          <label for="male">Mężczyzna</label>
+          <input type="radio" name="sex" id="sex" value="male">
+          <label for="female">Kobieta</label>
+          <input type="radio" name="sex" id="sex" value="female" checked><br><br>
+
+          <label for="marital_status">Wybierz swój stan:</label>
+          <select name="marital_status" id="marital_status" required>
+               <option value="" selected disabled hidden>-wybierz--</option>
+               <option value="panna">panna</option>
+               <option value="kawaler">kawaler</option>
+               <option value="rozwiedziony">rozwiedziony/a</option>
+               <option value="wdowiec">wdowiec</option>
+               <option value="wdowa">wdowa</option>
+          </select><br><br>
+
+          <label for="quantity_of_kids">Ilość dzieci</label>
+          <input type="text" name="quantity_of_kids" id="quantity_of_kids"><br><br>
+
+          Wybierz swoje zainteresowania: <br>
+          <label for="computers">Komputery</label>
+          <input type="checkbox" name="hobby" id="hobby" value="Komputery">&ensp;
+          <label for="motoring">Motoryzacja</label>
+          <input type="checkbox" name="hobby" id="hobby" value="Motoryzacja">&ensp;
+          <label for="music">Muzyka</label>
+          <input type="checkbox" name="hobby" id="hobby" value="Muzyka">&ensp;
+          <label for="films">Filmy</label>
+          <input type="checkbox" name="hobby" id="hobby" value="Filmy">&ensp;
+          <label for="fashion">Moda</label>
+          <input type="checkbox" name="hobby" id="hobby" value="Moda"><br><br>
+
+          <input type="checkbox" name="info" id="info">
+          <label for="info">Zaznacz jeżeli chcesz załączyć pare zdań o sobie</label><br>
+          <textarea name="text_area" id="text_area" cols="30" rows="5" style="display: none"></textarea><br>
+
+          <button type="button" id="form_button">Podsumuj</button>
+     </form>
+     <script>
+          const information = document.querySelector('#info');
+
+          information.addEventListener('click', () => {
+               const textarea = document.querySelector('#text_area');
+               (information.checked==true) ? textarea.style.display = 'block' : textarea.style.display = 'none';
+          });
+
+          const submit = document.querySelector('#form_button');
+          submit.addEventListener('click', () => {
+                    const name = document.querySelector('#name').value;
+                    console.log(name);
+                    const surname = document.querySelector('#surname').value;
+                    console.log(surname);
+                    const radio_buttons = document.querySelectorAll('#sex');
+                    radio_buttons.forEach(element => element.checked ? sex = element.value : '');
+                    console.log(sex);
+                    const status = document.querySelector('#marital_status').value;
+                    console.log(status);
+                    const quantity_of_kids = document.querySelector('#quantity_of_kids').value;
+                    console.log(quantity_of_kids);
+                    const hobby = document.querySelectorAll('#hobby');
+                    let hobbies = '';
+                    hobby.forEach(hobby => hobby.checked ? hobbies += hobby.value + ', ' : '');
+                    const textarea = document.querySelector('#text_area').value;
+               const summary = `${name} ${surname}, 
+               płeć: ${sex}, 
+               stan cywilny: ${status}, 
+               liczba dzieci: ${quantity_of_kids}, 
+               zainteresowania: ${hobbies}, 
+               dodatkowe informacje: ${textarea}`;
+               const paragraph = document.createElement('p');
+               const text = document.createTextNode(summary);
+               paragraph.appendChild(text);
+               document.body.appendChild(paragraph);
+          });
+     </script>
+</body>
+</html>

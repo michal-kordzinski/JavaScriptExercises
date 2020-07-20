@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>l6cw1.html</title>
+</head>
+<body>
+    <script>
+        const osoba = {
+            imie: 'karolina',
+            nazwisko: 'kowalska',
+            data_urodzenia: '24 listopad 2000'
+        }
+        const para = document.createElement('p');
+        document.body.appendChild(para);
+        console.log(osoba);
+        for (const key in osoba){
+            para.insertAdjacentHTML('beforeend', `${osoba[key]} <br>`);
+        }
+    </script>
+</body>
+</html>

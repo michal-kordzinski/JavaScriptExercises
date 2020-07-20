@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="styl9.css">
+    <title>Fabryka żelków</title>
+  </head>
+  <body>
+    <div class="container">
+        <!-- bloki górne -->
+        <div class="row row-col-2 justify-content-around bloki_gorne">
+            <div class="col-3"><a href="index.html"><img src="logo.png" alt="logo fabryki"></a></div>
+            <div class="col-3" id="drugi_blok_gorny"><a href="zamowienie.html">Zamówienie</a></div>
+        </div>
+        <!-- baner -->
+        <div class="row baner_stopka_tlo align-items-center">
+            <div class="col baner_stopka"><h2>Zamów nasz produkt</h2></div>
+        </div>
+        <!-- bloki główne-->
+        <div class="row row-col-2 blok_glowny_tlo">
+            <div class="col">
+                <h1>Oferta</h1>
+                <table class="tabela">
+                    <tr>
+                        <td>Kształty</td>
+                        <td>Kolory</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol>
+                                <li>miś</li>
+                                <li>żabka</li>
+                                <li>serce</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <ol>
+                                <li>czerwony</li>
+                                <li>niebieski</li>
+                                <li>żółty</li>
+                                <li>inny</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col">
+              <form action="">
+                Podaj numer kształtu: <br>
+                <input type="number" name="numer" id="numer_ksztaltu" required><br>
+                skomponuj swój kolor, podaj RGB: <br>
+                R: <input type="number" name="R" id="R" min="0" max="255" required>
+                G: <input type="number" name="G" id="G" min="0" max="255" required><br>
+                B: <input type="number" name="B" id="B" min="0" max="255" required><br>
+                <input type="submit" value="Zamów">
+              </form>
+              <p id="wybrany_ksztalt"></p>
+              <button type="button" id="przycisk_wybrany_kolor">Wybrany kolor</button>
+            </div>
+        </div>
+        <!-- stopka -->
+        <div class="row baner_stopka_tlo align-items-center">
+            <div class="col baner_stopka">Autor strony: <i>Michał Kordziński 4E</i></div>
+        </div>
+    </div>
+    <script>
+      document.addEventListener('submit', () => {
+        const numer_zelka = parseInt(document.querySelector('#numer_ksztaltu').value);
+        switch(numer_zelka){
+          case 1:
+            document.querySelector('#wybrany_ksztalt').textContent = 'Zamówiłeś żelka: miś';
+            break;
+          case 2:
+            document.querySelector('#wybrany_ksztalt').textContent = 'Zamówiłeś żelka: żabka'
+            break;
+          case 3: 
+            document.querySelector('#wybrany_ksztalt').textContent = 'Zamówiłeś żelka: serce'
+            break;
+          default:
+            document.querySelector('#wybrany_ksztalt').textContent = 'Zamówiłeś żelka: inny kształt'
+        }
+        const r = parseInt(document.querySelector('#R').value);
+        const g = parseInt(document.querySelector('#G').value);
+        const b = parseInt(document.querySelector('#B').value);
+        document.querySelector('#przycisk_wybrany_kolor').style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+        event.preventDefault()
+      });
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

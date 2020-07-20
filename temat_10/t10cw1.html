@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .mini-image{
+            margin-top: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .mini-image img{
+            width: 200px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .image{
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            height:500px;
+        }
+        .image img{
+            width:100%;
+            height: auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="image">
+        <img src="#" alt="">
+    </div>
+    <div class="mini-image">
+        <img class="icon" src="z1.jpg" alt="">
+        <img class="icon" src="z2.jpg" alt="">
+        <img class="icon" src="z3.jpg" alt="">
+        <img class="icon" src="z4.jpg" alt="">
+        <img class="icon" src="z5.jpg" alt="">
+    </div>
+    <script>
+        var images = document.querySelectorAll('.icon');
+        for(var i=1;i<=images.length;i++){
+            images[i].setAttribute("height","50px");
+            images[i].setAttribute("width","19.47%");
+            images[i].addEventListener("mouseover",function(){
+            document.querySelector("img").setAttribute("src", this.getAttribute("src"));
+        } )
+        }
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>t8cw2.html</title>
+    <style>
+        .zmiana{
+            width: 80px;
+            height: 20px;
+            background-color: lightgray;
+            color: red;
+
+        }
+    </style>
+</head>
+<body>
+<!-- Przygotuj stronę html. Umieść w niej div, obrazek oraz link do dowolnej strony.
+Przygotuj funkcje uruchamiane 3 przyciskami:
+ dodającą do div atrybut class ( ustaw w stylach w head strony odpowiednią klasę, zamieść w
+niej wymiary, kolor tła, kolor tekstu) oraz ustawiającą czysty tekst w jego wnętrzu
+ dodającą do obrazka szerokość i wysokość,
+ zmieniającą atrybut href w linku na adres innej strony -->
+    <div id="div">jakis tekst</div>
+    <img src="e1.jpg" alt="obrazek" id="img">
+    <a href="http://facebook.pl" id="link">facebook.pl</a>
+    <br><br>
+    <input type="submit" value="div" id="div_input">
+    <input type="submit" value="img" id="img_input">
+    <input type="submit" value="link" id="link_input">
+
+    <script>
+        const div = document.querySelector('#div');
+        document.querySelector('#div_input').addEventListener('click', () =>{
+            if (div.classList == '') div.classList = 'zmiana';
+            else div.classList = '';
+        });
+        const img = document.querySelector('#img');
+        document.querySelector('#img_input').addEventListener('click', () => {
+            if (img.style.height == '200px') {
+                img.style.height = '300px';
+                img.style.width = '600px';
+                console.log('dziala if');
+            } else {
+                console.log('dziala else');
+                img.style.height = '200px';
+                img.style.width = '400px';
+            }
+        });
+        const link = document.querySelector('#link');
+        document.querySelector('#link_input').addEventListener('click', () => {
+            if (link.href == 'http://facebook.pl/') {
+                link.href = 'http://twitter.com';
+                link.innerText = 'twitter.com';
+                console.log('dziala if');
+            } else {
+                link.href = 'http://facebook.pl/';
+                link.innerText = 'facebook.pl';
+                console.log('dziala else');
+            }
+        });
+    </script>
+</body>
+</html>

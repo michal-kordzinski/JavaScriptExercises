@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        td{
+            border: 1px solid black;
+        }
+        th{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h4>Tabliczka mnożenia</h4>
+    <input type="number" id="numA">Podaj liczbę A<br>
+    <input type="number" id="numB">Podaj liczbę B<br>
+    <button onclick="show()">Pokaż</button>
+    <table id="tabliczka">
+        
+    </table>
+    <script>
+        function show(){
+            let l = document.getElementById("numA").value;
+            let w = document.getElementById("numB").value;
+            if(w>l){
+            let table = document.getElementById("tabliczka");
+            let rows ='';
+            for (let i = l; i <= w; i++) {
+                rows += "<tr>";
+                for (let j = l; j <= w; j++) {
+                    if (i==l && j==l) rows += "<th>"+i+"</th>";
+                    if (i==l && j!=l) rows += "<th>"+j+"</th>";
+                    if (i!=l && j==l) rows += "<th>"+i+"</th>";
+                    if (i!=l && j!=l) {
+                        rows += "<td>"+i*j+"</td>";
+                    }
+                }
+                rows += "</tr>";
+            }
+            table.innerHTML = rows;
+            }
+            else{
+                document.querySelector('#tabliczka').innerHTML = '<p>Początek nie może być mniejszy niż koniec. </p>';
+            }
+        }
+    </script>
+</body>
+</html>

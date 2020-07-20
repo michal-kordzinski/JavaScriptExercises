@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>t8cw1.html</title>
+</head>
+<body>
+
+    <div><input type="submit" value="Pokaż"></div>
+    <script>
+        // Przygotuj stronę html. Umieść w niej div oraz przycisk uruchamiający funkcję
+        // wstawiającą dynamicznie do przygotowanego diva: tekst nagłówkowy „Polecane strony”, dwa linki
+        // do wybranych stron oraz obrazek.
+        document.querySelector('div input').addEventListener('click', () => {
+           document.querySelector('div').innerHTML = '<h1>Polecane strony</h1><a href="http://facebook.com">facebook.com</a><br><a href="http://twitter.com">twitter.com</a><br><img src="e1.jpg" alt="obrazek">';
+        });
+    </script>
+</body>
+</html>

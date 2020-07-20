@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>t3cw4.html</title>
+</head>
+<body>
+     <form action="" method="" id="check_color">
+     <fieldset>
+          <legend>Ulubione kolory</legend>
+          <label for="czerwony">Czerwony</label>
+          <input type="checkbox" name="kolor" id="czerwony" value="czerwony">
+          <label for="niebieski">Niebieski</label>
+          <input type="checkbox" name="kolor" id="niebieski" value="niebieski">
+          <label for="zielony">Zielony</label>
+          <input type="checkbox" name="kolor" id="zielony" value="zielony">
+          <button type="button" id="check">Sprawdź</button>
+          <textarea name="area" id="area" cols="" rows="1"></textarea>
+     </fieldset>
+     </form>
+     <script>
+          document.querySelector('#check').addEventListener('click', function checkColor() {
+               colors = document.querySelectorAll('#check_color input[name="kolor"]');
+               console.log(colors);
+               final_answer = '';
+               colors.forEach(function(colors) {
+                    if (colors.checked) {
+                         final_answer += colors.value + ', ';
+                    }
+                    console.log(final_answer);
+               });
+               document.querySelector('#area').innerHTML = final_answer;
+          })
+     </script>
+</body>
+</html>

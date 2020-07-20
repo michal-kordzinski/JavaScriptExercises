@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>t3cw2.html</title>
+</head>
+<body> 
+     <script>
+		answer = prompt('Podaj jaką dostałeś ocene: ');
+          element = document.createElement('p');
+		bad_notes = ['-1', '1', '1-', '-2', '2', '2-', '2+'];
+		enough_notes = ['-3', '3', '3-', '3+'];
+          if (bad_notes.includes(answer)) {
+               text = document.createTextNode('Sporo pracy przed tobą');
+			element.appendChild(text);
+			document.body.appendChild(element);
+          } else if(enough_notes.includes(answer)){
+               text = document.createTextNode('Jeszcze trochę, a będzie ok');
+			element.appendChild(text);
+			document.body.appendChild(element);
+          } else{
+               text = document.createTextNode('Ok');
+			element.appendChild(text);
+			document.body.appendChild(element);
+          }
+
+     </script>
+</body>
+</html>

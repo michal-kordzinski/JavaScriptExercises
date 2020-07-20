@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>t2cw10.html</title>
+</head>
+<body>
+     <script>
+          number = prompt('Wprowadź liczbę którą chcesz zsumować:');
+          number = parseInt(number);
+          while (true){
+               answer = window.confirm('Czy chcesz dalej sumować podane liczby?');
+               if (answer){
+                    number2 = prompt('Wprowadz kolejna liczbe do zsumwoania:')
+                    number2 = parseInt(number2);
+                    number += number2;
+               } else {
+                    document.write('Wynik sumowania = ' + number);
+                    break;
+               }
+          }
+          
+     </script>
+</body>
+</html>

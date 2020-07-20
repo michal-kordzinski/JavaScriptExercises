@@ -1,0 +1,59 @@
+html{
+	font-family: Helvetica;
+}
+body{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+main{
+	display: flex;
+	flex-direction: row;
+}
+nav{
+	background-color: Navy;
+	color: white;
+	height: 700px;
+	width: 25%;
+}
+article{
+	display: flex;
+	flex-direction: column;
+	width: 75%;
+}
+header{
+	background-color: RoyalBlue;
+	height: 100px;
+	width: auto%;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#drugi_panel_prawo{
+	background-color: SteelBlue;
+	height: 300px;
+	width: auto;
+}
+#trzeci_panel_prawo{
+	background-color: RoyalBlue;
+	height: 300px;
+	width: auto;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+footer{
+	background-color: SteelBlue;
+	text-align: center;
+	padding: 20px;
+}
+h1{
+	letter-spacing: 5px;
+}
+form{
+	margin: 30px;
+	line-height: 3;
+}

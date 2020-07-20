@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>t3cw1.html</title>
+</head>
+<body>
+     <br><br>
+     <form action="" method="post" id="form">
+          <label for="password">Podaj hasło w celu sprawdzenia</label>
+          <input type="text" name="password" id="password">&ensp;
+          <button type='button' id="check">Sprawdź hasło</button>
+     </form>
+     
+     <script>
+          document.querySelector('#check').addEventListener('click', function checkPassword() {
+               //stworzyc element h3 i dodac go jako brata dla formularza po czym wpisywanie do tego
+               //elementu odpowiedzi czy haslo jest zgodne czy nie, aby ich nie dublowac
+               if (document.querySelector('#answer')) {
+                    if (document.querySelector('#password').value == 'qwert') {
+                         document.querySelector('#answer').innerHTML = "Hasło prawidłowe.<br> <br>Nie doczytałem, że ma być w oknie dialogowym, od nastepnych zadań już będzie";
+                    } else {
+                         document.querySelector('#answer').innerHTML = "Hasło nieprawidłowe.<br> <br>Nie doczytałem, że ma być w oknie dialogowym, od nastepnych zadań już będzie";
+                    }
+               } else {
+                    main_node = document.querySelector('body');
+                    form_node = document.querySelector('#form');
+                    element = document.createElement('h3');
+                    element.setAttribute("id", "answer");
+                    main_node.insertBefore(element, form_node.nextSibling);
+
+                    if (document.querySelector('#password').value == 'qwert') {
+                         document.querySelector('#answer').innerHTML = "Hasło prawidłowe.<br> <br>Nie doczytałem, że ma być w oknie dialogowym, od nastepnych zadań już będzie";
+                    } else {
+                         document.querySelector('#answer').innerHTML = "Hasło nieprawidłowe. <br> <br>Nie doczytałem, że ma być w oknie dialogowym, od nastepnych zadań już będzie";
+                    }
+               }
+               
+          })
+     </script>
+</body>
+</html>

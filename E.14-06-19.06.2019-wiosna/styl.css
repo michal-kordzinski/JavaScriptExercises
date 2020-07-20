@@ -1,0 +1,52 @@
+body {
+    background-color: #99FFCC !important;
+}
+.container {
+    width: 1000px;
+    margin: auto;
+}
+#col_baner {
+    padding: 0px;
+}
+.baner {
+    background-color: #99FF66;
+    height: 200px;
+}
+.menu {
+    background-color: #66CCff;
+    text-align: center;
+    padding: 20px 0 20px 0;
+}
+.blok_glowny .col {
+    width: 300px;
+    padding: 10px;
+}
+.stopka {
+    background-color: #66CCFF;
+    color: #006666;
+    text-align: right;
+    height: 70px;
+    padding: 20px;
+}
+.menu  a {
+    color: #006666;
+    margin: 50px;
+    font-size: 200%;
+    text-decoration: none;
+}
+h2, h3 {
+    text-align: center;
+}
+#reset {
+    background-color: #FF0000;
+}
+#submit {
+    background-color: #00FF00;
+}
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1000px !important ;
+    }
+}
+
+ 

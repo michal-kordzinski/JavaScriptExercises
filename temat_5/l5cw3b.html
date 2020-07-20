@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>l5cw3a.html</title>
+</head>
+<body>
+    <script>
+        // class Osoba{
+        //     constructor(imie, nazwisko, wiek, wzrost, data_urodzenia, klasa){
+        //         this.imie = imie;
+        //         this.nazwisko = nazwisko;
+        //         this.wiek = wiek;
+        //         this.wzrost = wzrost;
+        //         this.data_urodzenia = data_urodzenia;
+        //         this.wiek = wiek;
+        //     }
+        //     wypiszDane(){
+        //         document.write(
+        //             `<table style="border: 1px solid black;">
+        //             <tr>
+        //             <td>${this.imie}</td>
+        //             <td>${this.nazwisko}</td>
+        //             <td>${this.wiek}</td>
+        //             <td>${this.wzrost}</td>
+        //             <td>${this.data_urodzenia}</td>
+        //             <td>${this.klasa}</td>
+        //             </tr>
+        //             </table>
+        //             `
+        //         );
+        //     }
+        // }
+        // const michal = new Osoba('Michał', 'Kordziński', 19, 180, '01.01.2000', '4E');
+        // console.log(michal.wypiszDane());
+
+        function pobieranieDanych() {
+            let tab = [];
+            tab.push(prompt('Podaj swoje imię: '));
+            tab.push(prompt('Podaj swoje nazwisko'));
+            tab.push(prompt('Podaj swoj wiek'));
+            tab.push(prompt('Podaj swoj wzrost'));
+            tab.push(prompt('Podaj swoja date urodznia'));
+            tab.push(prompt('Podaj do ktorej klasy chodzisz'));
+            return tab;
+        }
+        const dane = pobieranieDanych();
+        //tabela
+        const table = document.createElement('table');
+        table.setAttribute('id', 'table');
+        table.style.setProperty('border', '1px solid black');
+        document.body.appendChild(table);
+        //wiersz
+        const row = document.createElement('td');
+        row.setAttribute('id', 'row');
+        document.querySelector('#table').appendChild(row);
+        //dodawanie komorek
+        dane.forEach(element => document.querySelector('#row').insertAdjacentHTML(
+            'beforeend', 
+            `<td>${element}</td> `
+        ));
+        
+    </script>
+</body>
+</html>

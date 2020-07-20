@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>T7cw2aA.html</title>
+    <style>
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .link {
+            background-color: green;
+            border: 1px solid black;
+            text-decoration: none;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="http://facebook.com" class="link">facebook.com</a><br>
+        <a href="http://twitter.com" class="link">twitter.com</a><br>
+        <a href="http://meetup.com" class="link">meetup.com</a>
+    </div><br>
+    <button type='button' id="zmien_polozenie">Zmień położenie</button>
+    <button type='button' id="zmien_kolor">Zmień kolor</button>
+    <script>
+        document.querySelector('#zmien_polozenie').addEventListener('click', () => {
+            document.querySelector('div').style.alignItems = 'flex-end';
+        });
+        document.querySelector('#zmien_kolor').addEventListener('click', () => {
+            const linki = document.querySelectorAll('.link');
+            for(let i=0; i < linki.length; i++) linki[i].style.backgroundColor = 'red';
+        });
+    </script>
+</body>
+</html>

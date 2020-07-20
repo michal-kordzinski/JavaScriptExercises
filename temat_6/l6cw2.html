@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>l6cw2.html</title>
+</head>
+<body>
+    <script>
+        const osoba = {
+            imie: 'karolina',
+            nazwisko: 'kowalska',
+            data_urodzenia: {
+                dzien: 24, 
+                miesiac: 'listopad', 
+                rok: 2000
+            },
+            wzrost: 170,
+            kolor_oczu: 'brązowy'
+        }
+        console.log(osoba);
+        const para = document.createElement('p');
+        document.body.appendChild(para);
+        for (const key in osoba){
+            if (typeof(osoba[key])==="object"){
+                for (const key2 in osoba[key]) para.insertAdjacentHTML('beforeend', `${key2}: ${osoba[key][key2]}<br>`);
+            }    
+             else para.insertAdjacentHTML('beforeend', `${key}: ${osoba[key]}<br>`);
+            
+        }
+    </script>
+</body>
+</html>
